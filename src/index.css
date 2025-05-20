@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: theme('colors.cream');
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  body {
+    @apply bg-parchment bg-fixed bg-cover;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Ensure input text is black */
+  input, textarea, select {
+    @apply text-black;
+  }
+  
+  /* Dark theme styles */
+  body.dark-theme {
+    @apply bg-gray-900 text-gray-100;
+    background-image: none;
+  }
+  
+  body.dark-theme .bg-white {
+    @apply bg-gray-800;
+  }
+  
+  body.dark-theme .bg-cream {
+    @apply bg-gray-900;
+  }
+  
+  body.dark-theme .text-olive-700,
+  body.dark-theme .text-olive-800,
+  body.dark-theme .text-olive-900 {
+    @apply text-gray-100;
+  }
+  
+  body.dark-theme .border-olive-100,
+  body.dark-theme .border-olive-200,
+  body.dark-theme .border-olive-300 {
+    @apply border-gray-700;
+  }
+  
+  body.dark-theme .shadow-md {
+    @apply shadow-gray-900;
+  }
+  
+  /* Dark theme for inputs */
+  body.dark-theme input,
+  body.dark-theme textarea,
+  body.dark-theme select {
+    @apply bg-gray-700 text-gray-100 border-gray-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 bg-olive-600 text-white font-sans font-semibold rounded hover:bg-olive-700 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-2 bg-gold-400 text-olive-900 font-sans font-semibold rounded hover:bg-gold-500 transition-colors;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+} 
